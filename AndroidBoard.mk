@@ -24,10 +24,14 @@ RECOVERY_KMOD_TARGETS := \
     sec_tclm_v2.ko \
     sec_tsp_dumpkey.ko \
     sec_tsp_log.ko \
-    stm_ts.ko
+    stm_ts.ko \
+    synaptics_ts.ko
 
 RECOVERY_FIRMWARE_TARGETS := \
-    fts5cu56a_a52sxq.bin
+    s3908_a73xq_boe.bin \
+    s3908_a73xq_csot.bin \
+    s3908_a73xq_sdc.bin \
+    s3908_a73xq_sdc_4th.bin
 
 INSTALLED_RECOVERY_KMOD_TARGETS := $(RECOVERY_KMOD_TARGETS:%=$(TARGET_RECOVERY_ROOT_OUT)/vendor/lib/modules/%)
 $(INSTALLED_RECOVERY_KMOD_TARGETS): $(INSTALLED_KERNEL_TARGET)
