@@ -39,10 +39,10 @@ $(INSTALLED_RECOVERY_KMOD_TARGETS): $(INSTALLED_KERNEL_TARGET)
 	@mkdir -p $(dir $@)
 	cp $(@F:%=$(TARGET_OUT_VENDOR)/lib/modules/%) $(TARGET_RECOVERY_ROOT_OUT)/vendor/lib/modules/
 
-INSTALLED_RECOVERY_FIRMWARE_TARGETS := $(RECOVERY_FIRMWARE_TARGETS:%=$(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/tsp_stm/%)
+INSTALLED_RECOVERY_FIRMWARE_TARGETS := $(RECOVERY_FIRMWARE_TARGETS:%=$(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/tsp_synaptics/%)
 $(INSTALLED_RECOVERY_FIRMWARE_TARGETS): $(INSTALLED_KERNEL_TARGET)
 	echo -e ${CL_GRN}"Copying touchscreen firmware to recovery"${CL_RST}
 	@mkdir -p $(dir $@)
-	cp $(@F:%=$(TARGET_OUT_VENDOR)/firmware/tsp_stm/%) $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/tsp_stm/
+	cp $(@F:%=$(TARGET_OUT_VENDOR)/firmware/tsp_synaptics/%) $(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/tsp_synaptics/
 
 $(recovery_uncompressed_ramdisk): $(INSTALLED_RECOVERY_KMOD_TARGETS) $(INSTALLED_RECOVERY_FIRMWARE_TARGETS)
